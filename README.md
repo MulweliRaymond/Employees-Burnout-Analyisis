@@ -1,4 +1,4 @@
-# 🔥 Employee Burnout Analysis & Prediction  
+# Employee Burnout Analysis & Prediction  
 
 ## What If Burnout Could Be Predicted Before It Happens?
 
