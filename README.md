@@ -294,3 +294,82 @@ Feature importance values represent how much each variable contributes to predic
 
 
 
+
+## 📊 Interactive Dashboard Insights
+
+To complement the machine learning analysis, an interactive dashboard was developed to **visually validate patterns in the data**. The dashboard focuses on relationships that are most relevant for understanding burnout behavior.
+
+---
+
+## 🔹 Burnout Score vs Task Completion Rate (Scatter Plot)
+
+**Observation:**
+- A **strong negative relationship** is clearly visible
+- As task completion rate increases, burnout score decreases sharply
+
+**Interpretation:**
+- Employees who consistently complete tasks experience significantly lower burnout
+- Productivity is a **protective factor**, not a stressor
+- This visual finding strongly supports both the **Linear Regression** and **Random Forest Regressor** results
+
+> This is the most dominant relationship observed in the dashboard.
+
+---
+
+## 🔹 Average Work Hours vs Burnout Risk Level (Horizontal Bar Chart)
+
+**Axes:**
+- **X-axis:** Average number of working hours  
+- **Y-axis:** Burnout risk level (`Low`, `Medium`, `High`)
+
+**Observation:**
+- No strong separation across burnout risk levels
+- Distributions largely overlap
+- A **slight increase in high burnout risk** is observed for employees working **more than 6 hours**
+
+**Interpretation:**
+- Long hours alone do not explain burnout
+- Burnout emerges when long hours combine with other stressors
+- This confirms that workload is a **secondary contributor**, not the main driver
+
+---
+
+## 🔹 Sleep Hours vs Burnout Score (Scatter Plot)
+
+**Observation:**
+- Very **weak correlation** between sleep hours and burnout score
+- Points are widely scattered with no clear trend
+
+**Interpretation:**
+- Sleep duration alone does not predict burnout severity
+- Sleep likely reflects recovery behavior rather than burnout cause
+- This aligns with the weak importance of sleep in regression models
+
+---
+
+## 🔹 Number of Breaks vs Burnout Score
+
+**Observation:**
+- No significant relationship between breaks taken and burnout score
+- Burnout levels remain similar regardless of break count
+
+**Interpretation:**
+- Taking more breaks does not automatically reduce burnout
+- Breaks may be reactive rather than preventative
+- Burnout depends more on **work structure and productivity** than short-term pauses
+
+---
+
+## 📌 Dashboard Summary
+
+- **Strongest visual signal:** Task completion rate vs burnout score
+- **Weak or negligible signals:** Sleep hours, breaks taken
+- **Moderate signal:** Long work hours slightly increase burnout risk
+- Visual analysis **confirms machine learning findings**
+
+---
+
+<img width="1132" height="839" alt="image" src="https://github.com/user-attachments/assets/728e55bf-8daa-45b9-974c-67e89ae64373" />
+
+
+
