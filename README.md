@@ -224,3 +224,73 @@ An average employee starts at a **moderate burnout level**, which then shifts ba
 > Productivity and screen exposure explain burnout better than hours worked.
 
 
+## Random Forest Feature Importance Interpretation
+
+Random Forest models capture **non-linear effects and feature interactions**.  
+Feature importance values represent how much each variable contributes to prediction accuracy.
+
+---
+
+## Random Forest Regressor  
+**Target:** Burnout Score (continuous)
+
+| Feature | Importance | Interpretation |
+|------|-----------|---------------|
+| **task_completion_rate** | **94.46** | **Overwhelmingly dominant factor.** Burnout severity is primarily explained by productivity loss. |
+| **sleep_hours** | 1.48 | Secondary contributor. Sleep patterns influence burnout intensity but far less than productivity. |
+| **work_hours** | 1.45 | Workload has a measurable but limited effect on burnout score. |
+| **screen_time_hours** | 1.44 | Digital exposure contributes modestly to burnout severity. |
+| **meetings_count** | 0.55 | Minor influence. Meetings alone do not drive burnout score. |
+| **breaks_taken** | 0.47 | Low impact. Breaks reflect coping rather than cause. |
+| **after_hours_work** | 0.16 | Minimal contribution to burnout intensity. |
+| **day_type** | ~0.00 | No predictive value for burnout score. |
+
+### Key Insight (Regression)
+> **Burnout severity is almost entirely explained by task completion rate.**  
+> When productivity collapses, burnout score rises sharply—other variables play supporting roles.
+
+---
+
+## Random Forest Classifier  
+**Target:** Burnout Risk Level (Low / Medium / High)
+
+| Feature | Importance | Interpretation |
+|------|-----------|---------------|
+| **day_type** | **60.88** | **Strongest signal for burnout risk.** Burnout risk differs significantly between weekdays and weekends. |
+| **screen_time_hours** | 8.44 | High screen exposure strongly increases burnout risk. |
+| **sleep_hours** | 8.24 | Sleep duration is a key indicator of burnout risk. |
+| **after_hours_work** | 8.13 | Consistent after-hours work meaningfully raises burnout risk. |
+| **work_hours** | 7.94 | Long working hours increase likelihood of burnout. |
+| **meetings_count** | 3.09 | Moderate contributor to burnout risk. |
+| **breaks_taken** | 2.44 | Weak-to-moderate signal, often reactive rather than causal. |
+| **task_completion_rate** | 0.84 | Minimal role in predicting burnout risk level. |
+
+### Key Insight (Classification)
+> **Burnout risk is driven by time structure and recovery failure**, not productivity.  
+> Calendar effects, screen exposure, sleep, and after-hours work define risk.
+
+---
+
+# Regression vs Classification: What Changes?
+
+| Aspect | Burnout Score (Regressor) | Burnout Risk (Classifier) |
+|------|---------------------------|---------------------------|
+| What it measures | Burnout severity | Burnout likelihood |
+| Dominant factor | Task completion rate | Day type & recovery patterns |
+| Nature of burnout | Performance collapse | Stress accumulation |
+| Model focus | Output intensity | Early warning |
+
+---
+
+## Final Interpretation
+
+- **Burnout severity** reflects **how badly performance has degraded**
+- **Burnout risk** reflects **work structure, time pressure, and recovery**
+- The same data reveals **different burnout mechanisms** depending on the target
+- Random Forest exposes relationships that linear models cannot capture
+
+> Burnout is not a single signal.  
+> It has **distinct behavioral signatures for risk and severity**, and both must be modeled.
+
+
+
