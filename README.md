@@ -173,3 +173,54 @@ Train/Test Split → Model Learning → Predictions → Insights**
 
 This pipeline converts everyday work behavior into **measurable burnout intelligence**.
 
+
+
+## Linear Regression Results Interpretation
+
+### Model Context
+- **Target variable:** Burnout Score (continuous)
+- **Model:** Linear Regression
+- **Features:** Standardized (coefficients are directly comparable)
+
+---
+
+###  Feature-wise Coefficient Interpretation
+
+| Feature | Coefficient | Interpretation |
+|------|------------|---------------|
+| **work_hours** | -0.43 | Increasing work hours slightly **reduces burnout score** when other variables are constant. Workload alone is not a primary burnout driver. |
+| **screen_time_hours** | +0.53 | Higher screen time **increases burnout**. Prolonged digital exposure contributes directly to burnout. |
+| **meetings_count** | -0.14 | More meetings slightly **reduce burnout**, possibly reflecting coordination or support. The effect is weak. |
+| **breaks_taken** | +0.19 | More breaks correlate with **higher burnout**, suggesting breaks are taken as a response to burnout rather than a cause. |
+| **after_hours_work** | -0.35 | After-hours work slightly **reduces burnout score** in isolation, indicating flexible or voluntary work patterns. |
+| **sleep_hours** | +0.22 | Higher sleep duration is associated with **higher burnout**, likely reflecting recovery behavior. |
+| **task_completion_rate** | **-22.93** | **Strongest effect in the model.** Higher task completion dramatically **reduces burnout score**. Productivity is the key protective factor. |
+| **day_type** | ~0.00 | Day type (weekday vs weekend) has **no meaningful impact** on burnout score. |
+
+---
+
+###  Intercept Interpretation
+
+**Intercept = 44.01**
+
+This represents the **baseline burnout score** when all standardized features are at their mean values.  
+An average employee starts at a **moderate burnout level**, which then shifts based on behavior patterns.
+
+---
+
+###  Key Insights
+
+- **Task completion rate dominates burnout prediction**
+- **Screen time matters more than total work hours**
+- **Burnout reflects efficiency and digital strain, not just workload**
+- **Some variables represent coping behavior rather than causes**
+- **Calendar effects are negligible**
+
+---
+
+### Summary
+
+> Burnout is driven more by **how work is performed** than **how long work is performed**.  
+> Productivity and screen exposure explain burnout better than hours worked.
+
+
